@@ -280,10 +280,10 @@ class Aggregator(ABC):
                 )
         else:
             self.sampled_clients = self.rng.sample(self.clients, k=self.n_clients_per_round)
-        test = []
-        for client in self.sampled_clients:
-            test.append([client.clientID,client.cluster_id ,client.carbonIntensity])
-        print(test)
+       # test = []
+        #for client in self.sampled_clients:
+        #    test.append([client.clientID,client.cluster_id ,client.carbonIntensity])
+       # print(test)
         if self.sampling_rate < 0.5 :
             for i in range(len(self.sampled_clients)):
                 if self.sampled_clients[i].carbonIntensity > 200:
@@ -291,10 +291,10 @@ class Aggregator(ABC):
 
 
 
-        test = []
-        for client in self.sampled_clients:
-            test.append([client.clientID, client.cluster_id, client.carbonIntensity])
-        print(test)
+       # test = []
+       # for client in self.sampled_clients:
+        #    test.append([client.clientID, client.cluster_id, client.carbonIntensity])
+       # print(test)
 
 class NoCommunicationAggregator(Aggregator):
     r"""Clients do not communicate. Each client work locally
@@ -382,7 +382,7 @@ class FjordAggregator(Aggregator):
 
         print(self.sampling_rate)
         clusters = []
-        number_cluster = 10
+        number_cluster = 20
         if self.sampling_rate > 0.5:
             weights_arr=[]
             clientid =[]
@@ -412,7 +412,7 @@ class FjordAggregator(Aggregator):
             my_dict = dict(zip(clientid, clusters))
             self.cluster_dict = my_dict
 
-            print(my_dict)
+            #print(my_dict)
 
             for client in self.clients:
                 client.cluster_id = self.cluster_dict[client.clientID]
@@ -421,10 +421,10 @@ class FjordAggregator(Aggregator):
                     for client in self.clients:
                         if client.cluster_id == i:
                             if client.carbonIntensity < min_intensity:
-                                self.cluster_clients[i] =  client
+                                self.cluster_clients[i] = client
                                 min_intensity = client.carbonIntensity
 
-            print(self.cluster_clients)
+            #print(self.cluster_clients)
         for learner_id, learner in enumerate(self.global_learners_ensemble):
             learners = [client.learners_ensemble[learner_id] for client in self.clients]
             fjord_average_learners(learners, learner, weights=self.clients_weights)

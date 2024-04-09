@@ -76,7 +76,7 @@ def init_clients(args_, root_path, logs_root):
             local_steps=args_.local_steps,
             tune_locally=args_.locally_tune_clients,
             k=args_.k,
-            green = 0.6,
+            green = 0.8,
             energyClient= 65,
             carbonIntensity = 0,
             clientID = 0,
@@ -190,9 +190,9 @@ def run_experiment(args_):
 
     while current_round <= args_.n_rounds:
 
-        if(current_round > 100):
-            for c in clients:
-                c.green = -3
+       # if(current_round > 100):
+        #    for c in clients:
+        #        c.green = -3
         if(current_round == 0):
             aggregator.sampling_rate = 0.99
         else:
@@ -214,7 +214,7 @@ def run_experiment(args_):
         if (modeProject == 1):
             print(current_round)
             tr_1, tr_2, testa, testr, time, p, energyC, carbon , clusters = aggregator.mix()
-            print(clusters)
+            #print(clusters)
             if(len(testa) > 0):
                 acc = testa[0]
                 tr_acc.append(tr_1[0])
@@ -276,7 +276,7 @@ if __name__ == "__main__":
         rows.append([test_round[i], test_acc[i], carbonEmmited[i]])
 
     # name of csv file
-    filename = "BalanceExperiment/Emnist_E=1_alpha=0.01_feq1_real_test_client_selection.csv"
+    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.8.csv"
 
     # writing to csv file
     with open(filename, 'w') as csvfile:
