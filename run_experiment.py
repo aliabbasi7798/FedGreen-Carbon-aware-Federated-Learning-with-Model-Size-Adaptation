@@ -76,7 +76,7 @@ def init_clients(args_, root_path, logs_root):
             local_steps=args_.local_steps,
             tune_locally=args_.locally_tune_clients,
             k=args_.k,
-            green = 0.2,
+            green = 1,
             energyClient= 65,
             carbonIntensity = 0,
             clientID = 0,
@@ -198,8 +198,8 @@ def run_experiment(args_):
 
         else:
             aggregator.sampling_rate = 0.1
-            for c in clients:
-              c.green = -1
+            #for c in clients:
+              #c.green = -3
         torch.cuda.empty_cache()
         if ( modeProject == 0):
             tr_1, tr_2 ,testa, testr = aggregator.mix()
@@ -279,7 +279,7 @@ if __name__ == "__main__":
         rows.append([test_round[i], test_acc[i], carbonEmmited[i]])
 
     # name of csv file
-    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.6_sd=0.32_gc=3_kc=20_b=0.2.csv"
+    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=30_b=n.csv"
 
     # writing to csv file
     with open(filename, 'w') as csvfile:
