@@ -36,7 +36,7 @@ if __name__ == "__main__":
     y3 = []
     z3 = []
 
-    with open('BalanceExperiment/Emnist_E=1_alpha=0.01_2cluster(m=0.6 , sd=0.4)_200round_feq1_real.csv', 'r') as csvfile:
+    with open('BalanceExperiment/Emnist_E=1_alpha=0.01_3cluster(m=0.6 , sd=0.32)_200round_feq1_real.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
 
         i = 0
@@ -51,7 +51,7 @@ if __name__ == "__main__":
     y4 = []
     z4 = []
 
-    with open('BalanceExperiment/Emnist_E=1_alpha=0.01_3cluster(m=0.6 , sd=0.32)_200round_feq1_real.csv', 'r') as csvfile:
+    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.6_sd=0.32_gc=3_kc=20.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
 
         i = 0
@@ -103,16 +103,16 @@ if __name__ == "__main__":
     # Plot Loss curve
 
 
-    plt.plot(z1, y1, color='r', label='1 cluster m= 1, sd=0(FedAvg)' , linewidth=0.7)
-    plt.plot(z2, y2, color='k', label='1 cluster m= 0.6, sd=0', linewidth=0.7)
+    plt.plot(x1[0:23], y1[0:23], color='r', label='1 cluster m= 1, sd=0(FedAvg)' , linewidth=0.7)
+    plt.plot(x2[0:65], y2[0:65], color='k', label='1 cluster m= 0.6, sd=0', linewidth=0.7)
 
-    #plt.plot(z3, y3, color='g', label='2 clusters m= 0.6, sd=0.4', linewidth=0.7)
-    #plt.plot(z4, y4, color='y', label='3 clusters m= 0.6, sd=0.32', linewidth=0.7)
+    plt.plot(x3[0:164], y3[0:164], color='g', label='3 cluster m= 0.6, sd=0.32', linewidth=0.7)
+    plt.plot(x4[0:187], y4[0:187], color='m', label='FedGreenCS, m=0.6 , sd=0.32, k-mean-cluster=20', linewidth=0.7)
 
-    plt.plot(z5, y5, color='b', label='FedGreenCS, m=1 , k-mean-cluster=20', linewidth=0.7)
-    plt.plot(z6, y6, color='y', label='FedGreenCS, m=1 , k-mean-cluster=20', linewidth=0.7)
+    plt.plot(x5[0:47], y5[0:47], color='b', label='FedGreenCS, m=1 , k-mean-cluster=20', linewidth=0.7)
+    plt.plot(x6, y6, color='y', label='FedGreenCS, m=0.6 , k-mean-cluster=20', linewidth=0.7)
 
     plt.legend()
     plt.ylabel('test accuracy')
-    plt.xlabel('Communication Rounds')
-    plt.savefig('FedGreenCS_plot/alpha=0.01_clientselection_E=1_round_CS.svg')
+    plt.xlabel('Carbon Cost')
+    plt.savefig('FedGreenCS_plot/alpha=0.01_clientselection_E=1_round_CS_total_3cluster_carbon.svg')
