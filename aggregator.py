@@ -382,7 +382,7 @@ class FjordAggregator(Aggregator):
 
         print(self.sampling_rate)
         clusters = []
-        number_cluster = 30
+        number_cluster = 10
         if self.sampling_rate > 0.5:
             weights_arr=[]
             clientid =[]
