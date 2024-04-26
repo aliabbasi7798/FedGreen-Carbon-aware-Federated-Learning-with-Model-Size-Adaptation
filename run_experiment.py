@@ -76,7 +76,7 @@ def init_clients(args_, root_path, logs_root):
             local_steps=args_.local_steps,
             tune_locally=args_.locally_tune_clients,
             k=args_.k,
-            green = 1,
+            green = 0.6,
             energyClient= 65,
             carbonIntensity = 0,
             clientID = 0,
@@ -279,7 +279,7 @@ if __name__ == "__main__":
         rows.append([test_round[i], test_acc[i], carbonEmmited[i]])
 
     # name of csv file
-    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=10_b=n_new.csv"
+    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.6_sd=0_gc=1_kc=10_b=n_newn.csv"
 
     # writing to csv file
     with open(filename, 'w') as csvfile:

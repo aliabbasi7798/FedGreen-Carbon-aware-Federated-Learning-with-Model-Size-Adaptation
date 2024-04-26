@@ -67,7 +67,7 @@ if __name__ == "__main__":
     y5 = []
     z5 = []
 
-    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=5_b=n.csv', 'r') as csvfile:
+    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=5_b=n_new.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
 
         i = 0
@@ -82,7 +82,7 @@ if __name__ == "__main__":
     y6 = []
     z6 = []
 
-    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=10_b=n.csv', 'r') as csvfile:
+    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=10_b=n_newn.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
 
         i = 0
