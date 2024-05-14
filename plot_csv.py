@@ -82,7 +82,7 @@ if __name__ == "__main__":
     y6 = []
     z6 = []
 
-    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=10_b=n_newn.csv', 'r') as csvfile:
+    with open('FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=1_sd=0_gc=1_kc=10_b=n_new.csv', 'r') as csvfile:
         plots = csv.reader(csvfile, delimiter=',')
 
         i = 0
@@ -115,4 +115,4 @@ if __name__ == "__main__":
     plt.legend()
     plt.ylabel('test accuracy')
     plt.xlabel('Communication Round')
-    plt.savefig('FedGreenCS_plot/alpha=0.01_clientselection_E=1_round_CS_total_3cluster_b_k=v.pdf')
+    plt.savefig('FedGreenCS_plot/alpha=0.01_clientselection_E=1_round_CS_total_3cluster_b_k=v2.pdf')
