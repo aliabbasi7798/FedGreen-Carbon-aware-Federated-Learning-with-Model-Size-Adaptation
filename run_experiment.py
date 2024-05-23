@@ -199,7 +199,7 @@ def run_experiment(args_):
         else:
             aggregator.sampling_rate = 0.1
             for c in clients:
-             c.green = -3
+             c.green = -1
         torch.cuda.empty_cache()
         if ( modeProject == 0):
             tr_1, tr_2 ,testa, testr = aggregator.mix()
@@ -279,7 +279,7 @@ if __name__ == "__main__":
         rows.append([test_round[i], test_acc[i], carbonEmmited[i]])
 
     # name of csv file
-    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.6_sd=0.4_gc=2_kc=30_b=0.2.csv"
+    filename = "FedGreenCS/Emnist_E=1_alpha=0.01_feq1_real_m=0.6_sd=0.32_gc=2_kc=20_b=0.2_neew.csv"
 
     # writing to csv file
     with open(filename, 'w') as csvfile:
