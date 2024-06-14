@@ -15,7 +15,7 @@ from utils import split_dataset_by_labels, pathological_non_iid_split , dirichle
 
 
 # TODO: remove this after new release of torchvision
-EMNIST.url = "https://www.itl.nist.gov/iaui/vip/cs_links/EMNIST/gzip.zip"
+EMNIST.url = "https://biometrics.nist.gov/cs_links/EMNIST/gzip.zip"
 
 N_CLASSES = 62
 RAW_DATA_PATH = "raw_data/"

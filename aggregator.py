@@ -270,6 +270,7 @@ class Aggregator(ABC):
         sample a list of clients without repetition
 
         """
+        cluster_flag =0
         self.n_clients_per_round = max(1, int(self.sampling_rate * self.n_clients))
         if self.sample_with_replacement:
             self.sampled_clients = \
@@ -284,7 +285,8 @@ class Aggregator(ABC):
         #for client in self.sampled_clients:
         #    test.append([client.clientID,client.cluster_id ,client.carbonIntensity])
        # print(test)
-        if self.sampling_rate < 0.5 :
+
+        if self.sampling_rate < 0.5 and cluster_flag ==1:
             for i in range(len(self.sampled_clients)):
                 if self.sampled_clients[i].carbonIntensity > 200:
                     self.sampled_clients[i] = self.cluster_clients[self.sampled_clients[i].cluster_id]
