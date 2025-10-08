@@ -57,7 +57,7 @@ python3 run_experiment.py emnist Fjord-green \
     --verbose 1
 
 
-
+'''
 The test and training accuracy and loss will be saved in the specified log path.
 
 We provide example scripts to run paper and thesis experiments under the scripts/ directory.
@@ -68,5 +68,5 @@ Horváth et al., “FjORD: Fair and Accurate Federated Learning under Heterogene
 McMahan et al., “Communication-Efficient Learning of Deep Networks from Decentralized Data (FedAvg),” AISTATS 2017.
 
 Abbasi et al., “FedGreen: Carbon-Aware Federated Learning with Model Size Adaptation,” 2024.
-
+'''
 
